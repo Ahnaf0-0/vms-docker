@@ -1,0 +1,17 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+asyncpg==0.29.0
+pgvector==0.3.6
+python-jose[cryptography]==3.3.0
+passlib[argon2]==1.7.4
+cryptography==43.0.1
+pydantic==2.9.2
+email-validator==2.2.0
+python-multipart==0.0.9
+sqlalchemy==2.0.35
+alembic==1.13.3
+
+# Add these later when you wire in face recognition
+# (they're heavy and slow down early Docker builds while you're still learning):
+# insightface==0.7.3
+# onnxruntime==1.19.2
