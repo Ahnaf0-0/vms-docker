@@ -32,8 +32,8 @@ docker compose up --build
 ## How this maps to your VMS requirements
 - `db` — PostgreSQL with `pgvector` pre-installed, for face-embedding storage + your encrypted user/officer tables.
 - `backend` — FastAPI service for auth, appointments, QR issuance/validation, and (later) face-match calls.
-- `flutter-web-preview` — a browser-testable build of your Flutter app with `device_preview` turned on, so you (or teammates) can check the UI across phone/tablet/kiosk screen sizes without needing every physical device. This is separate from your real mobile/kiosk build — Docker never runs the actual mobile app, only this web-preview variant.
+- `flutter-web-preview` — a browser-testable build of your Flutter app with `device_preview` turned on, so you (or teammates) can check the UI across phone/tablet/kiosk screen sizes without needing every physical device. This is separate from your real mobile/kiosk build Docker never runs the actual mobile app, only this web-preview variant.
 
 ## Notes
-- The `backend` service mounts your local `./backend` folder into the container (`volumes:`), so code edits reload live — no rebuild needed for Python changes. You only need `--build` again after changing `requirements.txt` or the `Dockerfile`.
-- When you're ready to add face recognition, uncomment `insightface`/`onnxruntime` in `requirements.txt` and rebuild — expect that build to take noticeably longer (large ML deps).
+- The `backend` service mounts your local `./backend` folder into the container (`volumes:`), so code edits reload live no rebuild needed for Python changes. You only need `--build` again after changing `requirements.txt` or the `Dockerfile`.
+- When you're ready to add face recognition, uncomment `insightface`/`onnxruntime` in `requirements.txt` and rebuild expect that build to take noticeably longer (large ML deps).
